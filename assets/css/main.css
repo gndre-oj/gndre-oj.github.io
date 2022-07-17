@@ -1,6 +1,6 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,400italic,700,800");
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
 
 html, body, div, span, applet, object,
@@ -44,6 +44,7 @@ blockquote, q {
 
 body {
 	-webkit-text-size-adjust: none;
+	display: grid;
 }
 
 mark {
@@ -3453,7 +3454,7 @@ body.is-preload #banner:after {
 
 		#footer footer {
 			bottom: 2em;
-			color: #2c2f30;
+			color: #ffffff;
 			left: 0;
 			position: absolute;
 			text-align: center;
@@ -3491,83 +3492,143 @@ body.is-preload #banner:after {
 						padding-left: 0;
 					}
 
-/* Footer Icon */
-
-	.wrapper {
-		display: inline-flex;
-		list-style: none;
-	}
-
-	.wrapper .icon {
-		position: relative;
-		background: #ffffff;
-		border-radius: 50%;
-		padding: 15px;
-		margin: 10px;
-		width: 50px;
-		height: 50px;
-		font-size: 25px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+/* Footer Social Icon */
+	
+	.wrapper .button{
+		display: inline-block;
+		height: 60px;
+		width: 60px;
+		margin: 0 5px;
+		overflow: hidden;
+		background: #fff;
+		border-radius: 50px;
 		cursor: pointer;
-		transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-		text-decoration: none;
+		box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+		transition: all 0.3s ease-out;
+	}
+	.wrapper .button:hover{
+		width: 200px;
+	}
+	.wrapper .button .icon{
+		display: inline-block;
+		height: 60px;
+		width: 60px;
+		text-align: center;
+		border-radius: 50px;
+		box-sizing: border-box;
+		line-height: 60px;
+		transition: all 0.3s ease-out;
+	}
+	.wrapper .button:nth-child(1):hover .icon{
+		background: #E1306C;
+	}
+	.wrapper .button:nth-child(2):hover .icon{
+		background: #333;
+	}
+	.wrapper .button .icon i{
+		font-size: 25px;
+		line-height: 60px;
+		transition: all 0.3s ease-out;
+	}
+	.wrapper .button:hover .icon i{
+		color: #fff;
+	}
+	.wrapper .button span{
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 60px;
+		margin-left: 10px;
+		transition: all 0.3s ease-out;
+	}
+	.wrapper .button:nth-child(1) span{
+		color: #E1306C;
+	}
+	.wrapper .button:nth-child(2) span{
+		color: #333;
 	}
 
-	.wrapper .tooltip {
-		position: absolute;
-		top: 0;
-		font-size: 14px;
-		background: #ffffff;
-		color: #ffffff;
-		padding: 5px 8px;
-		border-radius: 5px;
-		box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-		opacity: 0;
-		pointer-events: none;
-		transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-	}
+/* Bubble Button */
 
-	.wrapper .tooltip::before {
+	.bubbly-button {
+		display: inline-block;
+		font-size: 1em;
+		margin-bottom: 60px;
+		-webkit-appearance: none;
+		appearance: none;
+		background-color: #6e247cb7 !important;
+		color: rgba(255, 255, 255, 0.836) !important;
+		border-radius: 4px;
+		border: none;
+		cursor: pointer;
+		position: relative;
+		transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+		box-shadow: 0 2px 25px #530e61;
+	}
+	.bubbly-button:focus {
+		outline: 0;
+	}
+	.bubbly-button:before, .bubbly-button:after {
 		position: absolute;
 		content: "";
-		height: 8px;
-		width: 8px;
-		background: #ffffff;
-		bottom: -3px;
-		left: 50%;
-		transform: translate(-50%) rotate(45deg);
-		transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+		display: block;
+		width: 140%;
+		height: 100%;
+		left: -20%;
+		z-index: -1000;
+		transition: all ease-in-out 0.8s;
+		background-repeat: no-repeat;
+	}
+	.bubbly-button:before {
+		display: none;
+		top: -75%;
+		background-image: radial-gradient(circle, #5d096e 20%, transparent 20%), radial-gradient(circle, transparent 20%, #78188b 20%, transparent 30%), radial-gradient(circle, #bb13dd 20%, transparent 20%), radial-gradient(circle, #953ba7 20%, transparent 20%), radial-gradient(circle, transparent 10%, #431a4b 15%, transparent 20%), radial-gradient(circle, #3c0e46 20%, transparent 20%), radial-gradient(circle, #c943e4 20%, transparent 20%), radial-gradient(circle, #683174 20%, transparent 20%), radial-gradient(circle, #ca6ddd 20%, transparent 20%);
+		background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+	}
+	.bubbly-button:after {
+		display: none;
+		bottom: -75%;
+		background-image: radial-gradient(circle, #d256eb 20%, transparent 20%), radial-gradient(circle, #35133b 20%, transparent 20%), radial-gradient(circle, transparent 10%, #bb3cd4 15%, transparent 20%), radial-gradient(circle, #911ea8 20%, transparent 20%), radial-gradient(circle, #7a258b 20%, transparent 20%), radial-gradient(circle, #cb40e7 20%, transparent 20%), radial-gradient(circle, #480555 20%, transparent 20%);
+		background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+	}
+	.bubbly-button:active {
+		transform: scale(0.9);
+		background-color: #78188b;
+		box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+	}
+	.bubbly-button.animate:before {
+		display: block;
+		animation: topBubbles ease-in-out 0.75s forwards;
+	}
+	.bubbly-button.animate:after {
+		display: block;
+		animation: bottomBubbles ease-in-out 0.75s forwards;
+	}
+	
+	@keyframes topBubbles {
+		0% {
+		background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+		}
+		50% {
+		background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+		}
+		100% {
+		background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+		background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+		}
+	}
+	@keyframes bottomBubbles {
+		0% {
+		background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+		}
+		50% {
+		background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+		}
+		100% {
+		background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+		background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+		}
 	}
 
-	.wrapper .icon:hover .tooltip {
-		top: -45px;
-		opacity: 1;
-		visibility: visible;
-		pointer-events: auto;
-	}
-
-	.wrapper .icon:hover span,
-	.wrapper .icon:hover .tooltip {
-		text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
-	}
-
-	.wrapper .instagram:hover,
-	.wrapper .instagram:hover .tooltip,
-	.wrapper .instagram:hover .tooltip::before {
-		background: #E4405F;
-		color: #ffffff;
-	}
-
-	.wrapper .github:hover,
-	.wrapper .github:hover .tooltip,
-	.wrapper .github:hover .tooltip::before {
-		background: #333333;
-		color: #ffffff;
-	}
 
 /* Large */
 
@@ -3840,4 +3901,3 @@ body.is-mobile.landing .wrapper.style4 {
 body.is-mobile.landing #footer {
 	background-color: #1d242a;
 }
-
